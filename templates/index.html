@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Praktikum Teknologi Cloud</title>
+		<style>
+	    body{
+	        font-family: sans-serif;
+	        background: #d5f0f3;
+        }
+        h1{
+	        text-align: center;
+	        /*ketebalan font*/
+	        font-weight: 300;
+        }
+        .tulisan_input{
+	        text-align: center;
+	        /*membuat semua huruf menjadi kapital*/
+	        text-transform: uppercase;
+        }
+        .kotak_input{
+    	    width: 350px;
+    	    background: white;
+    	    /*meletakkan form ke tengah*/
+    	    margin: 80px auto;
+    	    padding: 30px 20px;
+        }
+        label{
+	        font-size: 11pt;
+        }
+        .form_input{
+        	/*membuat lebar form penuh*/
+        	box-sizing : border-box;
+        	width: 100%;
+        	padding: 10px;
+        	font-size: 11pt;
+        	margin-bottom: 20px;
+        }
+        .tombol_input{
+        	background: #46de4b;
+        	color: white;
+        	font-size: 11pt;
+        	width: 100%;
+        	border: none;
+        	border-radius: 3px;
+        	padding: 10px 20px;
+        }
+        .link{
+        	color: #232323;
+        	text-decoration: none;
+        	font-size: 10pt;
+        }
+	</style>
+	</head>
+	<body>
+		<h1>Membuat Form Data Mahasiswa dan Menyimpan ke Database</h1>
+		<div class="kotak_input">
+			<p class="tulisan_input">Silahkan Inputkan Data Anda:</p>
+			<form action="/new" method="POST">
+				<label>Nama</label>
+				<input type="text" name="nama" class="form_input" placeholder="Nama Mahasiswa..."/>
+				<label>Nim</label>
+				<input type="number" name="nim" class="form_input" placeholder="Nim Mahasiswa..."/>
+				<label>Jurusan</label>
+				<input type="text" name="jurusan" class="form_input" placeholder="Jurusan Mahasiswa..."/>
+				<label>Angkatan</label>
+				<input type="number" name="angkatan" class="form_input" placeholder="Angkatan Mahasiswa..."/>
+				<label>Alamat</label>
+				<input type="text" name="alamat" class="form_input" placeholder="Alamat Mahasiswa..."/>
+				<label>No.Telp</label>
+				<input type="text" name="notelp" class="form_input" placeholder="No.Telepon Mahasiswa..."/>
+				<input type="submit" class="tombol_input" value="SUBMIT"/>
+				<br/>
+				<br/>
+			</form>
+        {% for item in items %}
+			<p class="tulisan_input"> {{ item.nama }} </p>
+			<p class="tulisan_input"> {{ item.nim }} </p>
+			<p class="tulisan_input"> {{ item.jurusan }} </p>
+			<p class="tulisan_input"> {{ item.angkatan }} </p>
+			<p class="tulisan_input"> {{ item.alamat }} </p>
+			<p class="tulisan_input"> {{ item.notelp }} </p>
+        {% endfor %}
+		</div>
+	</body>
+</html>
